@@ -1,0 +1,14 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.92.197.145:8848
+        group: yi5an
+      config:
+        server-addr: 47.92.197.145:8848
+        group: yi5an
+        file-extension: properties

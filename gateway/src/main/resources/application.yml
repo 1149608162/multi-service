@@ -1,0 +1,39 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: goods-service-1
+          uri: lb://goods-service
+          predicates:
+            - Path=/multi-service/goods
+            - Query=goodsId,^\+?[1-9][0-9]*$
+          filters:
+            - StripPrefix=1
+        - id: goods-service-2
+          uri: lb://goods-service
+          predicates:
+            - Path=/multi-service/goods/page/**
+            - Method=POST
+          filters:
+            - StripPrefix=1
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/multi-service/order/**
+          filters:
+            - StripPrefix=1
+        - id: shopcart-service
+          uri: lb://shopcart-service
+          predicates:
+            - Path=/multi-service/shop-cart/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        group: yi5an
+        server-addr: 47.92.197.145:8848

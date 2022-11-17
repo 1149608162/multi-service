@@ -1,10 +1,10 @@
-package com.yi5an.multiservicedemo;
+package com.yi5an.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MultiServiceDemoApplicationTests {
+class GatewayApplicationTests {
 
     @Test
     void contextLoads() {

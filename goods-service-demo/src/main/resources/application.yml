@@ -1,0 +1,14 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: goods-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.92.197.145:8848
+        group: yi5an
+      config:
+        server-addr: 47.92.197.145:8848
+        group: yi5an
+        file-extension: properties
