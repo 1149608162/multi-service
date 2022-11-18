@@ -12,3 +12,15 @@ spring:
         server-addr: 47.92.197.145:8848
         group: yi5an
         file-extension: properties
+
+seata:
+  application-id: goods-service
+  enabled: true
+  tx-service-group: test_save_order_group
+  service:
+    vgroup-mapping: <test_save_order_group, default>
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 47.92.197.145:8848

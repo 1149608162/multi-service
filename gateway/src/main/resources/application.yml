@@ -12,6 +12,7 @@ spring:
           predicates:
             - Path=/multi-service/goods
             - Query=goodsId,^\+?[1-9][0-9]*$
+            - GoodsId=10000,100000
           filters:
             - StripPrefix=1
         - id: goods-service-2
